@@ -1,0 +1,39 @@
+{
+  "Google STEP": {
+    "rounds": [
+      "Optional short recruiter/HR call - resume and project questions, no coding",
+      "Technical Round 1 - 45 min, coding on shared Google Doc, easy-medium difficulty",
+      "Technical Round 2 - 45 min, coding on shared Google Doc, medium-hard difficulty"
+    ],
+    "core_topics": [
+      "Arrays", "Strings", "HashMaps", "Sorting", "Searching",
+      "Stacks and Queues", "BFS/DFS", "Graphs", "2D Matrix problems", "Sliding Window"
+    ],
+    "difficulty": "Easy to Medium, sometimes Medium-Hard in round 2",
+    "format_notes": "No IDE - code is written on a Google Doc. Interviewers expect you to think out loud, optimize a brute-force solution, and discuss edge cases and time/space complexity.",
+    "behavioral_focus": "Minimal - light questions about projects/resume, no formal system design",
+    "resume_flags_positive": [
+      "Competitive programming experience (Codeforces, CodeChef, Kick Start, Code Jam)",
+      "Clear DSA practice history (LeetCode/GFG)",
+      "Working GitHub links (not broken!)"
+    ]
+  },
+  "Microsoft Explore": {
+    "rounds": [
+      "Behavioral/Recruiter Round - fit and communication questions",
+      "Technical Round 1 - 45 min, fundamentals-level coding",
+      "Technical Round 2 (sometimes) - 45 min, slightly deeper coding"
+    ],
+    "core_topics": [
+      "String manipulation", "Arrays", "HashMaps", "Basic recursion", "Fundamental data structures"
+    ],
+    "difficulty": "Easier than STEP - explicitly designed for students new to software engineering",
+    "format_notes": "Less DSA-intense than STEP. Some rounds include reasoning/behavioral questions (e.g., explaining a technical concept simply, basic language comparisons like C vs Java).",
+    "behavioral_focus": "Moderate - communication and reasoning matter alongside code correctness",
+    "resume_flags_positive": [
+      "Personal projects or hackathon experience",
+      "GitHub or portfolio showing practical work",
+      "Clear, well-structured resume with no broken links"
+    ]
+  }
+}

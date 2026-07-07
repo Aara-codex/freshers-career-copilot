@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresher's Career Copilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- LEFT: Brand / pitch panel -->
+  <div class="brand-panel">
+    <div class="brand-mark">FCC</div>
+    <h1 class="brand-headline">Turn placement anxiety<br>into a closing gap.</h1>
+    <p class="brand-sub">Track your readiness for internships, hackathons, and placements — with real interview data, not guesswork.</p>
+
+    <ul class="brand-points">
+      <li><span class="pt-num">01</span> See exactly what you're missing</li>
+      <li><span class="pt-num">02</span> Ask beginner questions, safely</li>
+      <li><span class="pt-num">03</span> Track the gap closing, week by week</li>
+    </ul>
+
+    <div class="hero-illustration">
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E0B85A"/>
+            <stop offset="100%" stop-color="#A6812E"/>
+          </linearGradient>
+          <linearGradient id="goldSide" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8C6A24"/>
+            <stop offset="100%" stop-color="#6B501A"/>
+          </linearGradient>
+          <linearGradient id="tealGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3FC2B0"/>
+            <stop offset="100%" stop-color="#237A6E"/>
+          </linearGradient>
+          <linearGradient id="tealSide" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1D6459"/>
+            <stop offset="100%" stop-color="#134640"/>
+          </linearGradient>
+          <linearGradient id="violetGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#9A8DEF"/>
+            <stop offset="100%" stop-color="#6558C4"/>
+          </linearGradient>
+          <linearGradient id="violetSide" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4E44A0"/>
+            <stop offset="100%" stop-color="#392F7D"/>
+          </linearGradient>
+          <radialGradient id="glowDot" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFF3D0"/>
+            <stop offset="60%" stop-color="#E0B85A"/>
+            <stop offset="100%" stop-color="#E0B85A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="60" cy="50" r="2.5" fill="#E0B85A" opacity="0.8"/>
+        <circle cx="340" cy="70" r="2" fill="#9A8DEF" opacity="0.7"/>
+        <circle cx="320" cy="230" r="2.5" fill="#3FC2B0" opacity="0.7"/>
+        <circle cx="45" cy="200" r="2" fill="#E0B85A" opacity="0.6"/>
+        <circle cx="200" cy="30" r="2" fill="#9A8DEF" opacity="0.6"/>
+        <g>
+          <rect x="60" y="220" width="110" height="60" rx="10" fill="url(#violetGrad)"/>
+          <rect x="60" y="270" width="110" height="16" rx="8" fill="url(#violetSide)"/>
+        </g>
+        <g>
+          <rect x="150" y="160" width="120" height="70" rx="10" fill="url(#tealGrad)"/>
+          <rect x="150" y="216" width="120" height="18" rx="9" fill="url(#tealSide)"/>
+        </g>
+        <g>
+          <rect x="250" y="90" width="110" height="90" rx="10" fill="url(#goldGrad)"/>
+          <rect x="250" y="164" width="110" height="20" rx="10" fill="url(#goldSide)"/>
+        </g>
+        <path d="M100 230 Q160 150 210 140 T300 70" fill="none" stroke="#E0B85A" stroke-width="2" stroke-dasharray="6 6" opacity="0.6"/>
+        <circle cx="303" cy="66" r="18" fill="url(#glowDot)"/>
+        <circle cx="303" cy="66" r="7" fill="#FFF3D0"/>
+        <circle cx="90" cy="235" r="11" fill="#20182E" stroke="#9A8DEF" stroke-width="1.5"/>
+        <path d="M85 235 L89 239 L96 231" fill="none" stroke="#C9C2F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="180" cy="175" r="11" fill="#14171F" stroke="#3FC2B0" stroke-width="1.5"/>
+        <path d="M175 175 L179 179 L186 171" fill="none" stroke="#BFF0E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- RIGHT: Auth panel -->
+  <div class="auth-panel">
+    <div class="auth-card">
+
+      <div class="tab-switch">
+        <button class="tab-btn active" id="tab-login" onclick="switchTab('login')">Log in</button>
+        <button class="tab-btn" id="tab-signup" onclick="switchTab('signup')">Sign up</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="login-form" class="auth-form">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required placeholder="you@example.com">
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required placeholder="••••••••">
+
+        <button type="submit" class="submit-btn">Log in</button>
+        <p class="form-error" id="login-error"></p>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form id="signup-form" class="auth-form hidden">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name" required placeholder="Your name">
+
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" required placeholder="you@example.com">
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" required placeholder="At least 6 characters">
+
+        <button type="submit" class="submit-btn">Create account</button>
+        <p class="form-error" id="signup-error"></p>
+      </form>
+
+      <!-- LOGGED IN STATE -->
+      <div id="logged-in-view" class="hidden"></div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- DASHBOARD (shown after login, replaces the whole page layout) -->
+<div id="dashboard" class="hidden">
+
+  <header class="dash-header">
+    <div class="dash-brand">FCC</div>
+    <nav class="dash-nav">
+      <button class="nav-btn active" data-tab="analyzer" onclick="switchDashTab('analyzer')">Readiness Analyzer</button>
+      <button class="nav-btn" data-tab="tracker" onclick="switchDashTab('tracker')">Daily Tracker</button>
+      <button class="nav-btn" data-tab="doubts" onclick="switchDashTab('doubts')">Doubt Solver</button>
+    </nav>
+    <div class="dash-user">
+      <span id="dash-user-name"></span>
+      <button id="dash-logout-btn" class="text-btn">Log out</button>
+    </div>
+  </header>
+
+  <main class="dash-main">
+
+    <!-- ANALYZER TAB -->
+    <section id="tab-analyzer" class="dash-tab">
+      <h2 class="tab-title">Readiness Analyzer</h2>
+      <p class="tab-sub">Compare your current profile against real interview patterns for any internship, hackathon, or placement drive.</p>
+
+      <form id="analyze-form" class="analyze-form">
+        <label for="target-type-select">Type</label>
+        <select id="target-type-select">
+          <option value="internship">Internship</option>
+          <option value="hackathon">Hackathon</option>
+          <option value="placement">Placement Drive</option>
+        </select>
+
+        <label for="target-name-input">Target name</label>
+        <input type="text" id="target-name-input" placeholder="e.g. Google STEP, Smart India Hackathon, Amazon AmazeWoW..." required>
+        <p class="field-hint">We have curated real interview data for Google STEP and Microsoft Explore — anything else uses AI's general knowledge.</p>
+
+        <label for="resume-text">Your resume / GitHub summary</label>
+        <textarea id="resume-text" rows="6" placeholder="Paste a summary of your skills, projects, GitHub repos, and current learning progress..." required></textarea>
+
+        <button type="submit" class="submit-btn" id="analyze-submit-btn">Analyze my readiness</button>
+        <p class="form-error" id="analyze-error"></p>
+      </form>
+
+      <div id="analyze-loading" class="hidden">
+        <p class="loading-text">Analyzing against real interview data…</p>
+      </div>
+
+      <div id="analyze-results" class="hidden">
+        <div class="score-card">
+          <div class="score-number" id="score-number">0</div>
+          <div class="score-label">Readiness Score</div>
+        </div>
+
+        <p class="data-source-badge" id="data-source-badge"></p>
+
+        <div class="result-columns">
+          <div class="result-col">
+            <h3 class="result-heading strengths-heading">Strengths</h3>
+            <ul id="strengths-list" class="result-list"></ul>
+          </div>
+          <div class="result-col">
+            <h3 class="result-heading gaps-heading">Gaps</h3>
+            <ul id="gaps-list" class="result-list"></ul>
+          </div>
+        </div>
+
+        <div class="fix-list-section">
+          <h3 class="result-heading">This Week's Focus</h3>
+          <ol id="fix-list" class="fix-list"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACKER TAB -->
+    <section id="tab-tracker" class="dash-tab hidden">
+      <h2 class="tab-title">Daily Tracker</h2>
+      <p class="tab-sub">Log what you practiced today and watch your streak grow.</p>
+
+      <div class="streak-row">
+        <div class="streak-card">
+          <div class="streak-number" id="current-streak">0</div>
+          <div class="streak-label">Current Streak</div>
+        </div>
+        <div class="streak-card">
+          <div class="streak-number" id="longest-streak">0</div>
+          <div class="streak-label">Longest Streak</div>
+        </div>
+      </div>
+
+      <div class="guidance-card" id="guidance-card">
+        <h3 class="guidance-heading">Your Mentor Says</h3>
+        <p id="guidance-text" class="guidance-text">Log some practice or run an analysis first, then check back here.</p>
+        <button class="text-btn-dark" id="refresh-guidance-btn">Refresh guidance</button>
+      </div>
+
+      <form id="log-form" class="analyze-form">
+        <label for="log-gap-select">Tied to a gap? (optional)</label>
+        <select id="log-gap-select">
+          <option value="">General practice (not tied to a specific gap)</option>
+        </select>
+
+        <label for="log-activity">What did you practice today?</label>
+        <textarea id="log-activity" rows="3" placeholder="e.g. Solved 3 BFS/DFS problems on LeetCode" required></textarea>
+
+        <label for="log-minutes">Minutes spent (optional)</label>
+        <input type="number" id="log-minutes" min="1" placeholder="e.g. 45">
+
+        <button type="submit" class="submit-btn" id="log-submit-btn">Log today's practice</button>
+        <p class="form-error" id="log-error"></p>
+      </form>
+
+      <div class="log-history">
+        <h3 class="result-heading">Recent Activity</h3>
+        <ul id="log-history-list" class="log-history-list"></ul>
+      </div>
+    </section>
+
+    <!-- DOUBT SOLVER TAB -->
+    <section id="tab-doubts" class="dash-tab hidden">
+      <h2 class="tab-title">Doubt Solver</h2>
+      <p class="tab-sub">Ask anything you're unsure about — placements, internships, hackathons, DSA, or just how things work.</p>
+
+      <form id="ask-form" class="analyze-form">
+        <label for="ask-question">Your question</label>
+        <textarea id="ask-question" rows="3" placeholder="e.g. What's the difference between Google STEP and SWE internship?" required></textarea>
+
+        <button type="submit" class="submit-btn" id="ask-submit-btn">Ask</button>
+        <p class="form-error" id="ask-error"></p>
+      </form>
+
+      <div id="ask-loading" class="hidden">
+        <p class="loading-text">Thinking through your question…</p>
+      </div>
+
+      <div class="doubt-history">
+        <h3 class="result-heading">Your Questions So Far</h3>
+        <div id="doubt-history-list" class="doubt-history-list"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/celebrate.js') }}"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/analyzer.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tracker.js') }}"></script>
+<script src="{{ url_for('static', filename='js/doubts.js') }}"></script>
+</body>
+</html>
