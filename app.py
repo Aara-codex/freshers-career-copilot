@@ -458,16 +458,19 @@ def get_questions():
     return jsonify([dict(row) for row in rows]), 200
 
 
-# ---------- PAGE ROUTES ----------
-
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
+# ---------- DATABASE INITIALIZATION ----------
+# This runs no matter how the app is started (python app.py locally,
+# or gunicorn on Render/production) so the tables always exist.
+if not os.path.exists(DATABASE):
+    init_db()
+
+
 # ---------- ENTRY POINT ----------
 
 if __name__ == "__main__":
-    if not os.path.exists(DATABASE):
-        init_db()
     app.run(debug=True, port=5000)
